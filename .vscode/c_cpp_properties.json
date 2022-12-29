@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "C:\\app\\cpp-plugin\\OpenSSL\\1.1.1s\\x86\\static\\include"
+            ]
+        }
+    ],
+    "version": 4
+}

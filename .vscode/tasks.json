@@ -1,0 +1,23 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "OpenSSL-Test",
+            "command": "cl.exe",
+            "args": [
+                "/Zi",
+                "/I",
+                "C:\\app\\cpp-plugin\\OpenSSL\\1.1.1s\\x86\\static\\include",
+                "/Fe${fileDirname}\\out\\${fileBasenameNoExtension}.exe",
+                "${file}",
+                "/link",
+                "/LIBPATH:C:\\app\\cpp-plugin\\OpenSSL\\1.1.1s\\x86\\static\\lib",
+                "libcrypto.lib"
+            ],
+            "group": {
+                "isDefault": true
+            },
+        }
+    ],
+    "version": "2.0.0"
+}
