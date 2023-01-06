@@ -54,7 +54,7 @@ void shaTest() {
     SHA512_Init(&sha512CTX);
     SHA512_Update(&sha512CTX, msg, msgLen);
     SHA512_Final(sha512Result, &sha512CTX);
-    printf("sha384: ");
+    printf("sha512: ");
     for (int i = 0; i < sizeof(sha512Result); ++i) {
         printf("%02X ", sha512Result[i]);
     }
