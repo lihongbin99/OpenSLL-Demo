@@ -7,6 +7,7 @@
 #include "dh.cpp"
 #include "dsa.cpp"
 #include "ecdh.cpp"
+#include "ecdsa.cpp"
 
 int main() {
     // mdTest();
@@ -15,5 +16,6 @@ int main() {
     // rsaTest();
     // dhTest();
     // dsaTest();
-    ecdhTest();
+    // ecdhTest();
+    ecdsaTest();
 }

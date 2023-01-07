@@ -36,7 +36,7 @@ void dsaTest() {
 
     unsigned char sign[64 * 1024];
     unsigned int sign_len = 0;
-    if (DSA_sign(0, msg, msg_len, sign, &sign_len, dsa) == 0) {
+    if (DSA_sign(0, msg, msg_len, sign, &sign_len, dsa) != 1) {
         cout << "DSA_sign error" << endl;
         return;
     }
@@ -46,7 +46,7 @@ void dsaTest() {
     }
     printf("\n");
 
-    if (DSA_verify(0, msg, msg_len, sign, sign_len, dsa) == 0) {
+    if (DSA_verify(0, msg, msg_len, sign, sign_len, dsa) != 1) {
         cout << "dsa verify error" << endl;
     } else {
         cout << "dsa verify success" << endl;

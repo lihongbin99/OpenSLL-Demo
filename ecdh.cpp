@@ -1,12 +1,12 @@
 #include <iostream>
 
 #include <openssl/ec.h>
-#include <openssl/dh.h>
 #include <openssl/obj_mac.h>
 
 using namespace std;
 
 #define ECDH_KEY NID_secp256k1
+#define SHARED_KEY_LEN 32
 
 void ecdhTest() {
     // 生成EC密钥对
@@ -30,7 +30,7 @@ void ecdhTest() {
     // char* pub2c = EC_POINT_point2hex(EC_KEY_get0_group(key2), EC_KEY_get0_public_key(key2), POINT_CONVERSION_UNCOMPRESSED, ctx);
     // cout << "pub2(" << strlen(pub2c) << "): \n" << pub2c << "\n" << endl;
 
-    unsigned char shared_key1[32];
+    unsigned char shared_key1[SHARED_KEY_LEN];
     if (ECDH_compute_key(shared_key1, sizeof(shared_key1), EC_KEY_get0_public_key(key2), key1, NULL) == 0) {
         cout << "ecdh compute_key1 error" << endl;
         return;
@@ -41,7 +41,7 @@ void ecdhTest() {
     }
     printf("\n");
 
-    unsigned char shared_key2[32];
+    unsigned char shared_key2[SHARED_KEY_LEN];
     if (ECDH_compute_key(shared_key2, sizeof(shared_key2), EC_KEY_get0_public_key(key1), key2, NULL) == 0) {
         cout << "ecdh compute_key2 error" << endl;
         return;
