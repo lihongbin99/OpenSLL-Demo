@@ -5,9 +5,11 @@
 
 using namespace std;
 
+#define DH_KEY_LEN 512
+
 void dhTest() {
     DH* dh = DH_new();
-    DH_generate_parameters_ex(dh, 512, DH_GENERATOR_5, NULL);
+    DH_generate_parameters_ex(dh, DH_KEY_LEN, DH_GENERATOR_5, NULL);
     DH_generate_key(dh);
 
     BIGNUM* p = 0;
@@ -22,7 +24,7 @@ void dhTest() {
     DH_set0_pqg(dh2, p, NULL, g);
     DH_generate_key(dh2);
 
-    unsigned char share_key1[64 * 1024];
+    unsigned char share_key1[DH_KEY_LEN / 8];
     int share_key1_len = DH_compute_key(share_key1, DH_get0_pub_key(dh1), dh2);
     if (share_key1_len == -1) {
         cout << "DH_compute_key1 error" << endl;
@@ -34,7 +36,7 @@ void dhTest() {
     }
     printf("\n");
 
-    unsigned char share_key2[64 * 1024];
+    unsigned char share_key2[DH_KEY_LEN / 8];
     int share_key2_len = DH_compute_key(share_key2, DH_get0_pub_key(dh2), dh1);
     if (share_key2_len == -1) {
         cout << "DH_compute_key2 error" << endl;

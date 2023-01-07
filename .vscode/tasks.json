@@ -7,7 +7,7 @@
             "args": [
                 "/Zi",
                 "/I", "C:\\app\\cpp-plugin\\Release-Static-x86\\OpenSSL\\1.1.1s\\include",
-                "/Fe${fileDirname}\\out\\${fileBasenameNoExtension}.exe",
+                "/Fe${fileDirname}\\out\\main.exe",
                 "${fileDirname}\\main.cpp",
                 "/link",
                 "/LIBPATH:C:\\app\\cpp-plugin\\Release-Static-x86\\OpenSSL\\1.1.1s\\lib",

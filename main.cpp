@@ -5,13 +5,15 @@
 #include "aes.cpp"
 #include "rsa.cpp"
 #include "dh.cpp"
-#include "ecc.cpp"
+#include "dsa.cpp"
+#include "ecdh.cpp"
 
 int main() {
     // mdTest();
     // shaTest();
     // aesTest();
     // rsaTest();
-    dhTest();
-    // eccTest();
+    // dhTest();
+    // dsaTest();
+    ecdhTest();
 }
