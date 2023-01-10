@@ -8,6 +8,11 @@
 #include "dsa.cpp"
 #include "ecdh.cpp"
 #include "ecdsa.cpp"
+#include "x25519.cpp"
+
+#include <openssl/err.h>
+
+using namespace std;
 
 int main() {
     // mdTest();
@@ -17,5 +22,6 @@ int main() {
     // dhTest();
     // dsaTest();
     // ecdhTest();
-    ecdsaTest();
+    // ecdsaTest();
+    x25519Test();
 }
